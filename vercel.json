@@ -1,0 +1,10 @@
+{
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/enfermagem-urgencia-emergencia",
+      "destination": "/cursos/enfermagem-urgencia-emergencia/",
+      "permanent": false
+    }
+  ]
+}
