@@ -14,12 +14,20 @@
       "destination": "/cursos/enfermagem-urgencia-emergencia/index.html"
     },
     {
+      "source": "/enfermagem-urgencia-emergencia/:path*",
+      "destination": "/cursos/enfermagem-urgencia-emergencia/:path*"
+    },
+    {
       "source": "/unidade-terapia-intensiva-adulto",
       "destination": "/cursos/unidade-terapia-intensiva-adulto/index.html"
     },
     {
       "source": "/unidade-terapia-intensiva-adulto/",
       "destination": "/cursos/unidade-terapia-intensiva-adulto/index.html"
+    },
+    {
+      "source": "/unidade-terapia-intensiva-adulto/:path*",
+      "destination": "/cursos/unidade-terapia-intensiva-adulto/:path*"
     },
     {
       "source": "/enfermagem-dermatologica-feridas-estomias",
@@ -30,6 +38,10 @@
       "destination": "/cursos/enfermagem-dermatologica-feridas-estomias/index.html"
     },
     {
+      "source": "/enfermagem-dermatologica-feridas-estomias/:path*",
+      "destination": "/cursos/enfermagem-dermatologica-feridas-estomias/:path*"
+    },
+    {
       "source": "/harmonizacao-orofacial",
       "destination": "/cursos/harmonizacao-orofacial/index.html"
     },
@@ -38,12 +50,20 @@
       "destination": "/cursos/harmonizacao-orofacial/index.html"
     },
     {
+      "source": "/harmonizacao-orofacial/:path*",
+      "destination": "/cursos/harmonizacao-orofacial/:path*"
+    },
+    {
       "source": "/ortodontia",
       "destination": "/cursos/ortodontia/index.html"
     },
     {
       "source": "/ortodontia/",
       "destination": "/cursos/ortodontia/index.html"
+    },
+    {
+      "source": "/ortodontia/:path*",
+      "destination": "/cursos/ortodontia/:path*"
     }
   ]
 }
