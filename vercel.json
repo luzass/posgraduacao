@@ -1,10 +1,25 @@
 {
   "trailingSlash": true,
-  "redirects": [
+  "rewrites": [
     {
       "source": "/enfermagem-urgencia-emergencia",
-      "destination": "/cursos/enfermagem-urgencia-emergencia/",
-      "permanent": false
+      "destination": "/cursos/enfermagem-urgencia-emergencia/"
+    },
+    {
+      "source": "/unidade-terapia-intensiva-adulto",
+      "destination": "/cursos/unidade-terapia-intensiva-adulto/"
+    },
+    {
+      "source": "/enfermagem-dermatologica-feridas-estomias",
+      "destination": "/cursos/enfermagem-dermatologica-feridas-estomias/"
+    },
+    {
+      "source": "/harmonizacao-orofacial",
+      "destination": "/cursos/harmonizacao-orofacial/"
+    },
+    {
+      "source": "/ortodontia",
+      "destination": "/cursos/ortodontia/"
     }
   ]
 }

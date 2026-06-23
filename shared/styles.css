@@ -165,7 +165,7 @@ textarea {
 .hero-logo {
   height: 40px;
   width: auto;
-  filter: brightness(0) saturate(100%) invert(15%) sepia(78%) saturate(2749%) hue-rotate(196deg) brightness(91%) contrast(102%);
+  filter: none;
 }
 
 .eyebrow {

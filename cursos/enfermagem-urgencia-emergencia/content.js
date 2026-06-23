@@ -59,7 +59,7 @@ const course = {
   },
   media: {
     logo: {
-      src: "./assets/logo.webp",
+      src: "./assets/logo_azul.webp",
       alt: "Logo Unieuro"
     },
     hero: {
