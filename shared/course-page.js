@@ -42,12 +42,16 @@ function renderImageBlock(image, fallbackTitle, fallbackText, options = {}) {
   const {
     loading = "lazy",
     decoding = "async",
-    fetchpriority
+    fetchpriority,
+    width,
+    height
   } = options;
 
   if (image?.src) {
     const fetchPriorityAttr = fetchpriority ? ` fetchpriority="${escapeHtml(fetchpriority)}"` : "";
-    return `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || fallbackTitle)}" loading="${escapeHtml(loading)}" decoding="${escapeHtml(decoding)}"${fetchPriorityAttr} />`;
+    const widthAttr = image.width || width ? ` width="${escapeHtml(image.width || width)}"` : "";
+    const heightAttr = image.height || height ? ` height="${escapeHtml(image.height || height)}"` : "";
+    return `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || fallbackTitle)}" loading="${escapeHtml(loading)}" decoding="${escapeHtml(decoding)}"${widthAttr}${heightAttr}${fetchPriorityAttr} />`;
   }
 
   return `
@@ -71,7 +75,9 @@ function getInitials(name) {
 
 function renderCoordinatorAvatar(image, name) {
   if (image?.src) {
-    return `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || name)}" loading="lazy" decoding="async" />`;
+    const widthAttr = image.width ? ` width="${escapeHtml(image.width)}"` : ` width="400"`;
+    const heightAttr = image.height ? ` height="${escapeHtml(image.height)}"` : ` height="400"`;
+    return `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt || name)}" loading="lazy" decoding="async"${widthAttr}${heightAttr} />`;
   }
 
   return `<span class="coordinator-avatar-placeholder">${escapeHtml(getInitials(name) || "PF")}</span>`;
@@ -82,9 +88,12 @@ function renderLogo(logo) {
     return "";
   }
 
+  const widthAttr = logo.width ? ` width="${escapeHtml(logo.width)}"` : ` width="474"`;
+  const heightAttr = logo.height ? ` height="${escapeHtml(logo.height)}"` : ` height="100"`;
+
   return `
     <div class="hero-logo-wrap">
-      <img class="hero-logo" src="${escapeHtml(logo.src)}" alt="${escapeHtml(logo.alt || "Logo Unieuro")}" />
+      <img class="hero-logo" src="${escapeHtml(logo.src)}" alt="${escapeHtml(logo.alt || "Logo Unieuro")}"${widthAttr}${heightAttr} />
     </div>
   `;
 }
@@ -184,42 +193,6 @@ function initModules() {
   });
 }
 
-function initHeroAlignment() {
-  const heroActions = document.querySelector(".hero-actions");
-  const heroImage = document.querySelector(".hero-image");
-
-  if (!heroActions || !heroImage) {
-    return;
-  }
-
-  const syncHeroImageHeight = () => {
-    if (window.innerWidth <= 1080) {
-      heroImage.style.removeProperty("height");
-      heroImage.style.removeProperty("min-height");
-      return;
-    }
-
-    const imageTop = heroImage.getBoundingClientRect().top;
-    const actionsBottom = heroActions.getBoundingClientRect().bottom;
-    const desiredHeight = Math.max(320, Math.round(actionsBottom - imageTop));
-
-    heroImage.style.height = `${desiredHeight}px`;
-    heroImage.style.minHeight = `${desiredHeight}px`;
-  };
-
-  const runSync = () => {
-    window.requestAnimationFrame(syncHeroImageHeight);
-  };
-
-  runSync();
-  window.addEventListener("resize", runSync);
-  window.addEventListener("load", runSync);
-
-  if (document.fonts?.ready) {
-    document.fonts.ready.then(runSync);
-  }
-}
-
 function initStickyCta() {
   const sticky = document.querySelector(".mobile-sticky-cta");
   const trigger = document.querySelector("#diferenciais");
@@ -228,13 +201,17 @@ function initStickyCta() {
     return;
   }
 
-  const syncStickyCta = () => {
-    sticky.classList.toggle("is-visible", trigger.getBoundingClientRect().top <= 0);
-  };
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      sticky.classList.toggle("is-visible", !entry.isIntersecting);
+    },
+    {
+      rootMargin: "0px 0px -10% 0px",
+      threshold: 0
+    }
+  );
 
-  syncStickyCta();
-  window.addEventListener("scroll", syncStickyCta, { passive: true });
-  window.addEventListener("resize", syncStickyCta);
+  observer.observe(trigger);
 }
 
 export function renderCoursePage(course) {
@@ -242,7 +219,6 @@ export function renderCoursePage(course) {
   document.title = `${course.hero.title} | Pós-graduação`;
 
   const app = document.querySelector("[data-course-app]");
-  const isMobile = window.innerWidth <= 640;
 
   app.innerHTML = `
     <div class="page-shell">
@@ -276,8 +252,10 @@ export function renderCoursePage(course) {
                   "Aqui vamos encaixar uma foto forte de simulação realística, laboratório ou atendimento supervisionado.",
                   {
                     loading: "eager",
-                    decoding: "sync",
-                    fetchpriority: "high"
+                    decoding: "async",
+                    fetchpriority: "high",
+                    width: 1600,
+                    height: 1067
                   }
                 )}
               </figure>
@@ -378,11 +356,10 @@ export function renderCoursePage(course) {
               <span class="coordinator-orb coordinator-orb-gold" aria-hidden="true"></span>
               <span class="coordinator-orb coordinator-orb-blue" aria-hidden="true"></span>
               <figure class="coordinator-photo">
-                ${renderImageBlock(
-                course.media.coordinator,
-                "Espaço para foto da coordenadora",
-                "Aqui podemos inserir a foto oficial da coordenadora com um corte mais institucional."
-                )}
+                ${renderImageBlock(course.media.coordinator, "Espaço para foto da coordenadora", "Aqui podemos inserir a foto oficial da coordenadora com um corte mais institucional.", {
+                  width: 400,
+                  height: 400
+                })}
               </figure>
             </div>
 
@@ -469,6 +446,5 @@ export function renderCoursePage(course) {
   `;
 
   initModules();
-  initHeroAlignment();
   initStickyCta();
 }
