@@ -2,24 +2,48 @@
   "trailingSlash": true,
   "rewrites": [
     {
-      "source": "/enfermagem-urgencia-emergencia/:match*",
-      "destination": "/cursos/enfermagem-urgencia-emergencia/"
+      "source": "/",
+      "destination": "/index.html"
     },
     {
-      "source": "/unidade-terapia-intensiva-adulto/:match*",
-      "destination": "/cursos/unidade-terapia-intensiva-adulto/"
+      "source": "/enfermagem-urgencia-emergencia",
+      "destination": "/cursos/enfermagem-urgencia-emergencia/index.html"
     },
     {
-      "source": "/enfermagem-dermatologica-feridas-estomias/:match*",
-      "destination": "/cursos/enfermagem-dermatologica-feridas-estomias/"
+      "source": "/enfermagem-urgencia-emergencia/",
+      "destination": "/cursos/enfermagem-urgencia-emergencia/index.html"
     },
     {
-      "source": "/harmonizacao-orofacial/:match*",
-      "destination": "/cursos/harmonizacao-orofacial/"
+      "source": "/unidade-terapia-intensiva-adulto",
+      "destination": "/cursos/unidade-terapia-intensiva-adulto/index.html"
     },
     {
-      "source": "/ortodontia/:match*",
-      "destination": "/cursos/ortodontia/"
+      "source": "/unidade-terapia-intensiva-adulto/",
+      "destination": "/cursos/unidade-terapia-intensiva-adulto/index.html"
+    },
+    {
+      "source": "/enfermagem-dermatologica-feridas-estomias",
+      "destination": "/cursos/enfermagem-dermatologica-feridas-estomias/index.html"
+    },
+    {
+      "source": "/enfermagem-dermatologica-feridas-estomias/",
+      "destination": "/cursos/enfermagem-dermatologica-feridas-estomias/index.html"
+    },
+    {
+      "source": "/harmonizacao-orofacial",
+      "destination": "/cursos/harmonizacao-orofacial/index.html"
+    },
+    {
+      "source": "/harmonizacao-orofacial/",
+      "destination": "/cursos/harmonizacao-orofacial/index.html"
+    },
+    {
+      "source": "/ortodontia",
+      "destination": "/cursos/ortodontia/index.html"
+    },
+    {
+      "source": "/ortodontia/",
+      "destination": "/cursos/ortodontia/index.html"
     }
   ]
 }
