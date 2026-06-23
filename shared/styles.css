@@ -91,7 +91,7 @@ textarea {
   display: grid;
   grid-template-columns: minmax(0, 1.16fr) minmax(320px, 0.84fr);
   gap: 24px;
-  align-items: start;
+  align-items: stretch;
   padding: 0;
 }
 
@@ -200,6 +200,19 @@ textarea {
   line-height: 0.9;
   letter-spacing: -0.04em;
   max-width: 10ch;
+  text-wrap: balance;
+}
+
+.hero-title-lg {
+  font-size: clamp(2.7rem, 5.2vw, 4.7rem);
+  line-height: 0.92;
+  max-width: 12ch;
+}
+
+.hero-title-xl {
+  font-size: clamp(2.45rem, 4.8vw, 4.1rem);
+  line-height: 0.95;
+  max-width: 13ch;
 }
 
 .hero-lead,
@@ -318,7 +331,7 @@ textarea {
 .hero-media {
   display: grid;
   align-content: stretch;
-  align-self: start;
+  align-self: stretch;
   min-width: 0;
   border: 0;
   background: transparent;
@@ -330,8 +343,9 @@ textarea {
   position: relative;
   overflow: hidden;
   width: 100%;
-  min-height: 320px;
-  aspect-ratio: 1.5;
+  height: 100%;
+  min-height: clamp(500px, 56vw, 720px);
+  aspect-ratio: 0.84;
   border-radius: 18px;
   background:
     linear-gradient(180deg, rgba(0, 47, 97, 0.16), rgba(0, 47, 97, 0.72)),
@@ -950,6 +964,11 @@ textarea {
     max-width: 100%;
   }
 
+  .hero-title-lg,
+  .hero-title-xl {
+    max-width: 100%;
+  }
+
   .hero-actions {
     flex-direction: column;
   }
@@ -1050,6 +1069,16 @@ textarea {
     font-size: clamp(2.35rem, 13vw, 3.4rem);
     line-height: 0.94;
     letter-spacing: -0.05em;
+  }
+
+  .hero-title-lg {
+    font-size: clamp(2.15rem, 10.5vw, 3.1rem);
+    line-height: 0.96;
+  }
+
+  .hero-title-xl {
+    font-size: clamp(1.95rem, 9.4vw, 2.75rem);
+    line-height: 0.98;
   }
 
   .hero-lead,
@@ -1285,6 +1314,14 @@ textarea {
 
   .hero-copy h1 {
     font-size: clamp(2.1rem, 12vw, 2.9rem);
+  }
+
+  .hero-title-lg {
+    font-size: clamp(1.95rem, 10.8vw, 2.55rem);
+  }
+
+  .hero-title-xl {
+    font-size: clamp(1.8rem, 9.4vw, 2.25rem);
   }
 
   .hero-lead,

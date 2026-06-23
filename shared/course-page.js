@@ -98,6 +98,20 @@ function renderLogo(logo) {
   `;
 }
 
+function getHeroTitleClass(title) {
+  const text = String(title || "").trim();
+
+  if (text.length >= 38) {
+    return "hero-title hero-title-xl";
+  }
+
+  if (text.length >= 26) {
+    return "hero-title hero-title-lg";
+  }
+
+  return "hero-title";
+}
+
 function renderFeatureCards(items) {
   return items
     .map(
@@ -195,23 +209,44 @@ function initModules() {
 
 function initStickyCta() {
   const sticky = document.querySelector(".mobile-sticky-cta");
-  const trigger = document.querySelector("#diferenciais");
+  const hero = document.querySelector(".hero");
+  const lead = document.querySelector("#lead-form");
 
-  if (!sticky || !trigger) {
+  if (!sticky || !hero || !lead) {
     return;
   }
 
-  const observer = new IntersectionObserver(
+  let heroPassed = false;
+  let leadReached = false;
+
+  const syncSticky = () => {
+    sticky.classList.toggle("is-visible", heroPassed && !leadReached);
+  };
+
+  const heroObserver = new IntersectionObserver(
     ([entry]) => {
-      sticky.classList.toggle("is-visible", !entry.isIntersecting);
+      heroPassed = !entry.isIntersecting;
+      syncSticky();
     },
     {
-      rootMargin: "0px 0px -10% 0px",
-      threshold: 0
+      threshold: 0,
+      rootMargin: "-10% 0px 0px 0px"
     }
   );
 
-  observer.observe(trigger);
+  const leadObserver = new IntersectionObserver(
+    ([entry]) => {
+      leadReached = entry.isIntersecting;
+      syncSticky();
+    },
+    {
+      threshold: 0,
+      rootMargin: "0px 0px -15% 0px"
+    }
+  );
+
+  heroObserver.observe(hero);
+  leadObserver.observe(lead);
 }
 
 export function renderCoursePage(course) {
@@ -230,7 +265,7 @@ export function renderCoursePage(course) {
                 ${renderLogo(course.media.logo)}
                 <span class="hero-brand">| Pós-graduação</span>
               </div>
-              <h1>${escapeHtml(course.hero.title)}</h1>
+              <h1 class="${getHeroTitleClass(course.hero.title)}">${escapeHtml(course.hero.title)}</h1>
               <p class="hero-lead">${escapeHtml(course.hero.description)}</p>
               ${renderList(course.hero.quickPoints, "hero-points")}
 
