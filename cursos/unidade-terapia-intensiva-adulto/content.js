@@ -72,8 +72,7 @@ const course = {
   value: {
     eyebrow: "Diferenciais do curso",
     title: "Uma especialização construída para unir base clínica, prática real e segurança no cuidado intensivo.",
-    description:
-      "Os diferenciais foram organizados para destacar flexibilidade, infraestrutura e desenvolvimento técnico de quem quer atuar com mais consistência na UTI adulto.",
+    description: "",
     items: [
       {
         title: "Aulas presenciais quinzenais",

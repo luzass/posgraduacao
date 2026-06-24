@@ -72,8 +72,7 @@ const course = {
   value: {
     eyebrow: "Diferenciais do curso",
     title: "Uma especialização pensada para unir formação clínica completa, certificações extras e preparo real para o mercado.",
-    description:
-      "Os diferenciais foram organizados para posicionar o curso como uma formação robusta para quem quer entrar ou se fortalecer na harmonização orofacial com credibilidade.",
+    description: "",
     items: [
       {
         title: "Formação do básico ao avançado",

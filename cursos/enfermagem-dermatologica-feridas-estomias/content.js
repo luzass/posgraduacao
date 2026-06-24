@@ -72,8 +72,7 @@ const course = {
   value: {
     eyebrow: "Diferenciais do curso",
     title: "Uma especialização pensada para unir técnica, prática supervisionada e expansão de carreira.",
-    description:
-      "Os diferenciais foram organizados para mostrar por que a pós atende tanto quem quer iniciar na área quanto quem deseja crescer com mais autonomia em feridas e estomias.",
+    description: "",
     items: [
       {
         title: "Conteúdo atualizado e voltado para a prática",

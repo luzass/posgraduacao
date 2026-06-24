@@ -72,8 +72,7 @@ const course = {
   value: {
     eyebrow: "Diferenciais do curso",
     title: "Uma especialização pensada para unir prática clínica, protocolos exclusivos e oportunidades reais de retorno profissional.",
-    description:
-      "Os diferenciais foram organizados para mostrar que o curso vai além da formação tradicional, acelerando a capacidade de atuação do aluno e ampliando seu repertório técnico e comercial.",
+    description: "",
     items: [
       {
         title: "4 certificações complementares",
