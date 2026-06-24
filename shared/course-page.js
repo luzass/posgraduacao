@@ -88,8 +88,8 @@ function renderLogo(logo) {
     return "";
   }
 
-  const widthAttr = logo.width ? ` width="${escapeHtml(logo.width)}"` : ` width="474"`;
-  const heightAttr = logo.height ? ` height="${escapeHtml(logo.height)}"` : ` height="100"`;
+  const widthAttr = logo.width ? ` width="${escapeHtml(logo.width)}"` : ` width="320"`;
+  const heightAttr = logo.height ? ` height="${escapeHtml(logo.height)}"` : ` height="67"`;
 
   return `
     <div class="hero-logo-wrap">
@@ -499,6 +499,28 @@ function mountBelowFoldSections(course, shell) {
   initStickyCta();
 }
 
+function scheduleBelowFoldMount(course, shell) {
+  const queueMount = () => {
+    if ("requestIdleCallback" in window) {
+      window.requestIdleCallback(() => {
+        mountBelowFoldSections(course, shell);
+      }, { timeout: 1200 });
+      return;
+    }
+
+    window.setTimeout(() => {
+      mountBelowFoldSections(course, shell);
+    }, 600);
+  };
+
+  if (document.readyState === "complete") {
+    queueMount();
+    return;
+  }
+
+  window.addEventListener("load", queueMount, { once: true });
+}
+
 export function renderCoursePage(course) {
   applyTheme(course.theme);
   document.title = `${course.hero.title} | P\u00f3s-gradua\u00e7\u00e3o`;
@@ -524,9 +546,5 @@ export function renderCoursePage(course) {
     return;
   }
 
-  window.requestAnimationFrame(() => {
-    window.requestAnimationFrame(() => {
-      mountBelowFoldSections(course, shell);
-    });
-  });
+  scheduleBelowFoldMount(course, shell);
 }
