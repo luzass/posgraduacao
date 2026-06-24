@@ -289,7 +289,7 @@ const course = {
   },
   mobileCta: {
     title: "Quer saber valores e próxima turma?",
-    description: "Fale com a equipe e receba atendimento rápido.",
+    description: "Receba atendimento rápido por WhatsApp.",
     buttonLabel: "Quero me inscrever"
   },
   footer: {

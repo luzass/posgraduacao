@@ -264,7 +264,7 @@ const course = {
     points: [
       "Entenda valores, cronograma e condições da turma com início em 13/08/2026.",
       "Saiba mais sobre as 4 certificações complementares incluídas na formação.",
-      "Receba atendimento rápido para confirmar aderência ao perfil e estrutura do curso."
+      "Receba atendimento rápido por WhatsApp."
     ],
     buttonLabel: "Quero me inscrever",
     note:
@@ -272,7 +272,7 @@ const course = {
   },
   mobileCta: {
     title: "Quer saber valores e próxima turma?",
-    description: "Fale com a equipe e receba atendimento rápido.",
+    description: "Receba atendimento rápido por WhatsApp.",
     buttonLabel: "Quero me inscrever"
   },
   footer: {

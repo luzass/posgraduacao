@@ -248,7 +248,7 @@ const course = {
     points: [
       "Entenda valores, cronograma e condições para ingresso na próxima turma.",
       "Confirme a documentação necessária para matrícula, como RG, CPF e comprovante de residência.",
-      "Receba atendimento rápido para avaliar se essa especialização combina com seu momento profissional."
+      "Receba atendimento rápido por WhatsApp."
     ],
     buttonLabel: "Quero me inscrever",
     note:
@@ -256,7 +256,7 @@ const course = {
   },
   mobileCta: {
     title: "Quer saber valores e próxima turma?",
-    description: "Fale com a equipe e receba atendimento rápido.",
+    description: "Receba atendimento rápido por WhatsApp.",
     buttonLabel: "Quero me inscrever"
   },
   footer: {

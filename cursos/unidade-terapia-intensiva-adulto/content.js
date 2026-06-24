@@ -272,7 +272,7 @@ const course = {
     points: [
       "Tire dúvidas sobre valores, condições e próxima abertura de turma.",
       "Confirme documentação necessária para matrícula, como RG, CPF e comprovante de residência.",
-      "Receba atendimento rápido para entender se o curso combina com seu momento profissional."
+      "Receba atendimento rápido por WhatsApp."
     ],
     buttonLabel: "Quero me inscrever",
     note:
@@ -280,7 +280,7 @@ const course = {
   },
   mobileCta: {
     title: "Quer saber valores e próxima turma?",
-    description: "Fale com a equipe e receba atendimento rápido.",
+    description: "Receba atendimento rápido por WhatsApp.",
     buttonLabel: "Quero me inscrever"
   },
   footer: {
