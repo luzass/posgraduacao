@@ -101,6 +101,10 @@ function renderLogo(logo) {
 function getHeroTitleClass(title) {
   const text = String(title || "").trim();
 
+  if (text.length >= 52) {
+    return "hero-title hero-title-xxl";
+  }
+
   if (text.length >= 38) {
     return "hero-title hero-title-xl";
   }
@@ -249,66 +253,65 @@ function initStickyCta() {
   leadObserver.observe(lead);
 }
 
-export function renderCoursePage(course) {
-  applyTheme(course.theme);
-  document.title = `${course.hero.title} | Pós-graduação`;
-
-  const app = document.querySelector("[data-course-app]");
-
-  app.innerHTML = `
-    <div class="page-shell">
-      <header class="hero">
-        <div class="hero-inner">
-          <div class="hero-panel">
-            <div class="hero-copy">
-              <div class="hero-topline">
-                ${renderLogo(course.media.logo)}
-                <span class="hero-brand">| Pós-graduação</span>
-              </div>
-              <h1 class="${getHeroTitleClass(course.hero.title)}">${escapeHtml(course.hero.title)}</h1>
-              <p class="hero-lead">${escapeHtml(course.hero.description)}</p>
-              ${renderList(course.hero.quickPoints, "hero-points")}
-
-              <div class="hero-actions">
-                <a class="button button-primary" href="${escapeHtml(course.cta.primary.href)}">
-                  ${escapeHtml(course.cta.primary.label)}
-                </a>
-                <a class="button button-secondary" href="${escapeHtml(course.cta.secondary.href)}">
-                  ${escapeHtml(course.cta.secondary.label)}
-                </a>
-              </div>
+function renderHeroSection(course) {
+  return `
+    <header class="hero">
+      <div class="hero-inner">
+        <div class="hero-panel">
+          <div class="hero-copy">
+            <div class="hero-topline">
+              ${renderLogo(course.media.logo)}
+              <span class="hero-brand">| P\u00f3s-gradua\u00e7\u00e3o</span>
             </div>
+            <h1 class="${getHeroTitleClass(course.hero.title)}">${escapeHtml(course.hero.title)}</h1>
+            <p class="hero-lead">${escapeHtml(course.hero.description)}</p>
+            ${renderList(course.hero.quickPoints, "hero-points")}
 
-            <aside class="hero-media">
-              <figure class="hero-image">
-                ${renderImageBlock(
-                  course.media.hero,
-                  "Espaço para imagem principal",
-                  "Aqui vamos encaixar uma foto forte de simulação realística, laboratório ou atendimento supervisionado.",
-                  {
-                    loading: "eager",
-                    decoding: "async",
-                    fetchpriority: "high",
-                    width: 1600,
-                    height: 1067
-                  }
-                )}
-              </figure>
-            </aside>
+            <div class="hero-actions">
+              <a class="button button-primary" href="${escapeHtml(course.cta.primary.href)}">
+                ${escapeHtml(course.cta.primary.label)}
+              </a>
+              <a class="button button-secondary" href="${escapeHtml(course.cta.secondary.href)}">
+                ${escapeHtml(course.cta.secondary.label)}
+              </a>
+            </div>
           </div>
 
-          <div class="hero-bottom">
-            <div class="hero-meta">
-              ${renderStats(course.hero.stats)}
-            </div>
-            <div class="hero-note">
-              <strong>${escapeHtml(course.media.note.title)}</strong>
-              <p>${escapeHtml(course.media.note.description)}</p>
-            </div>
+          <aside class="hero-media">
+            <figure class="hero-image">
+              ${renderImageBlock(
+                course.media.hero,
+                "Espaço para imagem principal",
+                "Aqui vamos encaixar uma foto forte de simulação realística, laboratório ou atendimento supervisionado.",
+                {
+                  loading: "eager",
+                  decoding: "sync",
+                  fetchpriority: "high",
+                  width: 1280,
+                  height: 853
+                }
+              )}
+            </figure>
+          </aside>
+        </div>
+
+        <div class="hero-bottom">
+          <div class="hero-meta">
+            ${renderStats(course.hero.stats)}
+          </div>
+          <div class="hero-note">
+            <strong>${escapeHtml(course.media.note.title)}</strong>
+            <p>${escapeHtml(course.media.note.description)}</p>
           </div>
         </div>
-      </header>
+      </div>
+    </header>
+  `;
+}
 
+function renderBelowFoldSections(course) {
+  return `
+    <div data-below-fold>
       <section class="section section-soft" id="diferenciais">
         <div class="section-inner">
           <div class="section-header">
@@ -391,10 +394,15 @@ export function renderCoursePage(course) {
               <span class="coordinator-orb coordinator-orb-gold" aria-hidden="true"></span>
               <span class="coordinator-orb coordinator-orb-blue" aria-hidden="true"></span>
               <figure class="coordinator-photo">
-                ${renderImageBlock(course.media.coordinator, "Espaço para foto da coordenadora", "Aqui podemos inserir a foto oficial da coordenadora com um corte mais institucional.", {
-                  width: 400,
-                  height: 400
-                })}
+                ${renderImageBlock(
+                  course.media.coordinator,
+                  "Espaço para foto da coordenadora",
+                  "Aqui podemos inserir a foto oficial da coordenadora com um corte mais institucional.",
+                  {
+                    width: 400,
+                    height: 400
+                  }
+                )}
               </figure>
             </div>
 
@@ -425,7 +433,7 @@ export function renderCoursePage(course) {
       <section class="section section-cta" id="lead-form">
         <div class="section-inner lead-layout">
           <div class="lead-copy">
-            <span class="eyebrow">Próxima turma</span>
+            <span class="eyebrow">Pr\u00f3xima turma</span>
             <h2>${escapeHtml(course.lead.title)}</h2>
             <p>${escapeHtml(course.lead.description)}</p>
             ${renderList(course.lead.points, "hero-points")}
@@ -448,7 +456,7 @@ export function renderCoursePage(course) {
                 <input id="email" name="email" type="email" placeholder="Seu melhor e-mail" />
               </div>
               <div class="field">
-                <label for="area">Área de atuação</label>
+                <label for="area">\u00c1rea de atua\u00e7\u00e3o</label>
                 <input id="area" name="area" type="text" placeholder="Ex.: pronto atendimento, UTI, clínica" />
               </div>
               <div class="field field-full">
@@ -479,7 +487,46 @@ export function renderCoursePage(course) {
       </div>
     </div>
   `;
+}
 
+function mountBelowFoldSections(course, shell) {
+  if (!shell || shell.querySelector("[data-below-fold]")) {
+    return;
+  }
+
+  shell.insertAdjacentHTML("beforeend", renderBelowFoldSections(course));
   initModules();
   initStickyCta();
+}
+
+export function renderCoursePage(course) {
+  applyTheme(course.theme);
+  document.title = `${course.hero.title} | P\u00f3s-gradua\u00e7\u00e3o`;
+
+  const app = document.querySelector("[data-course-app]");
+
+  if (!app) {
+    return;
+  }
+
+  const shell = app.querySelector(".page-shell");
+  const hasPrerenderedHero = Boolean(shell?.querySelector(".hero"));
+
+  if (!shell || !hasPrerenderedHero) {
+    app.innerHTML = `
+      <div class="page-shell">
+        ${renderHeroSection(course)}
+        ${renderBelowFoldSections(course)}
+      </div>
+    `;
+    initModules();
+    initStickyCta();
+    return;
+  }
+
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
+      mountBelowFoldSections(course, shell);
+    });
+  });
 }
