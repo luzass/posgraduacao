@@ -108,15 +108,13 @@ const course = {
     ],
     impact: {
       title: "Mais do que um título, uma preparação para atuar com segurança, credibilidade e diferencial competitivo.",
-      description:
-        "A página posiciona a especialização como uma escolha estratégica para cirurgiões-dentistas que querem elevar a prática clínica e ampliar oportunidades em HOF."
+      description: ""
     }
   },
   program: {
     eyebrow: "Conteúdo programático",
     title: "Conteúdo do curso",
-    description:
-      "Os módulos foram organizados para desenvolver base anatômica, diagnóstico, terapêuticas injetáveis, tecnologias, segurança clínica, ética e atuação integrada.",
+    description: "",
     modules: [
       {
         title: "Fundamentos, Diagnóstico e Planejamento",
@@ -250,8 +248,7 @@ const course = {
     name: "Marcelo S. Gomes",
     highlight:
       "Coordenação com trajetória sólida em odontologia, pós-graduação e harmonização orofacial, unindo experiência acadêmica e prática clínica.",
-    description:
-      "A coordenação reforça a credibilidade do curso ao combinar formação avançada, experiência docente de longa data e atuação específica em HOF.",
+    description: "",
     credentials: [
       "Pós-doutor em Odontologia",
       "Doutor e mestre em Ortodontia e Ortopedia Facial",
@@ -263,8 +260,7 @@ const course = {
   },
   lead: {
     title: "O próximo passo para atuar com mais técnica, segurança e reconhecimento em HOF começa aqui.",
-    description:
-      "A página já está pronta para apresentar a especialização, esclarecer dúvidas sobre ingresso e levar o interessado para o atendimento comercial.",
+    description: "",
     points: [
       "Entenda valores, calendário e condições da turma com início em 03/09/2026.",
       "Saiba mais sobre as duas certificações complementares incluídas na formação.",

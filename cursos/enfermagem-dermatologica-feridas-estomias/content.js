@@ -108,15 +108,13 @@ const course = {
     ],
     impact: {
       title: "Mais do que um título, uma formação para cuidar melhor e crescer com mais autonomia.",
-      description:
-        "A página posiciona o curso como uma escolha para quem busca preparo técnico, experiência prática, diferenciação profissional e oportunidades de atuação em um mercado especializado."
+      description: ""
     }
   },
   program: {
     eyebrow: "Conteúdo programático",
     title: "Conteúdo do curso",
-    description:
-      "Os módulos foram organizados para desenvolver base clínica em pele e cicatrização, assistência em estomias, habilidades técnicas, visão humanizada e expansão profissional.",
+    description: "",
     modules: [
       {
         title: "Fundamentos e Terapias em Enfermagem Dermatológica",
@@ -186,8 +184,7 @@ const course = {
   audience: {
     eyebrow: "Público-alvo",
     title: "Para quem esta formação faz mais sentido",
-    description:
-      "A oferta foi organizada para deixar claro como essa pós atende enfermeiros que querem entrar, se atualizar ou empreender na área dermatológica.",
+    description: "",
     items: [
       {
         title: "Enfermeiros que querem iniciar ou se especializar",
@@ -236,8 +233,7 @@ const course = {
     name: "Patrícia Silva de Figueiredo",
     highlight:
       "Formação sólida, experiência assistencial e atuação voltada ao desenvolvimento de competências clínicas e profissionais em enfermagem.",
-    description:
-      "A coordenação reforça a credibilidade da especialização ao unir trajetória acadêmica, prática clínica e compromisso com a formação aplicada do enfermeiro.",
+    description: "",
     credentials: [
       "Enfermeira graduada pela EERP-USP em Bacharelado e Licenciatura em Enfermagem",
       "Mestranda pela Faculdade de Saúde da Universidade de Brasília (FS/UnB)",
@@ -248,8 +244,7 @@ const course = {
   },
   lead: {
     title: "O próximo passo para atuar com mais segurança em feridas e estomias começa aqui.",
-    description:
-      "A página já está pronta para apresentar a proposta do curso, esclarecer dúvidas e levar o interessado para o atendimento comercial.",
+    description: "",
     points: [
       "Entenda valores, cronograma e condições para ingresso na próxima turma.",
       "Confirme a documentação necessária para matrícula, como RG, CPF e comprovante de residência.",

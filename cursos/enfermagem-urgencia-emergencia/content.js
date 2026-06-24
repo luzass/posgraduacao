@@ -84,8 +84,7 @@ const course = {
   value: {
     eyebrow: "Diferenciais do curso",
     title: "Diferenciais que tornam a formação mais prática, atual e valorizada no mercado.",
-    description:
-      "Os diferenciais do curso foram organizados para mostrar, de forma objetiva, por que esta pós atende tanto quem está entrando na área quanto quem já trabalha e quer subir de nível.",
+    description: "",
     items: [
       {
         title: "Prática regulamentada e segura",
@@ -120,15 +119,13 @@ const course = {
     ],
     impact: {
       title: "Mais do que um título, uma evolução de presença profissional.",
-      description:
-        "A construção da página valoriza domínio técnico, atualização com protocolos atuais, segurança em cenários críticos e vantagem competitiva no mercado."
+      description: ""
     }
   },
   program: {
     eyebrow: "Conteúdo programático",
     title: "Conteúdo do curso",
-    description:
-      "Os módulos foram organizados para desenvolver base conceitual, domínio de protocolos, leitura clínica, treino técnico e visão de qualidade assistencial.",
+    description: "",
     modules: [
       {
         title: "Fundamentos em Urgência e Emergência",
@@ -196,8 +193,7 @@ const course = {
   timeline: {
     eyebrow: "Formato da pós",
     title: "Uma especialização planejada para aprofundar sem travar sua rotina profissional.",
-    description:
-      "O formato do curso foi pensado para favorecer evolução prática e aplicação imediata, mesmo para quem vive a rotina intensa da assistência.",
+    description: "",
     items: [
       {
         label: "Duração",
@@ -222,8 +218,7 @@ const course = {
   audience: {
     eyebrow: "Público-alvo",
     title: "Para quem esta formação faz mais sentido",
-    description:
-      "A construção da oferta foi dividida para mostrar com clareza para quem este curso faz mais sentido e quais ganhos cada perfil pode esperar.",
+    description: "",
     items: [
       {
         title: "Enfermeiros recém-formados",
@@ -246,8 +241,7 @@ const course = {
   faculty: {
     eyebrow: "Corpo docente",
     title: "Docentes com vivência acadêmica e prática assistencial.",
-    description:
-      "Professores com atuação acadêmica e assistencial que conectam teoria, prática e realidade do serviço de saúde.",
+    description: "",
     items: [
       {
         title: "Especialistas, mestres e doutores",
@@ -272,8 +266,7 @@ const course = {
     name: "Patrícia Silva de Figueiredo",
     highlight:
       "Formação sólida, experiência assistencial e atuação voltada à prática clínica, formação de profissionais e desenvolvimento de competências em enfermagem.",
-    description:
-      "A coordenação reforça a credibilidade do curso ao unir formação acadêmica relevante com experiência prática aplicada à rotina da enfermagem.",
+    description: "",
     credentials: [
       "Enfermeira graduada pela EERP-USP em Bacharelado e Licenciatura em Enfermagem",
       "Mestranda pela Faculdade de Saúde da Universidade de Brasília",
@@ -284,12 +277,11 @@ const course = {
   },
   lead: {
     title: "O próximo passo para atuar com mais segurança, técnica e reconhecimento começa aqui.",
-    description:
-      "A página já está preparada para captar interesse, esclarecer dúvidas e levar o aluno para o atendimento comercial com muito mais clareza.",
+    description: "",
     points: [
       "Entenda valores, condições de ingresso e início da próxima turma.",
       "Fale com a equipe para tirar dúvidas sobre perfil e aplicação do curso.",
-      "Receba atendimento rápido por WhatsApp, formulário ou CRM."
+      "Receba atendimento rápido por WhatsApp."
     ],
     buttonLabel: "Quero me inscrever",
     note:

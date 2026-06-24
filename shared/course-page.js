@@ -25,6 +25,15 @@ function renderList(items, className = "list") {
   `;
 }
 
+function renderParagraph(text, className = "") {
+  if (!text) {
+    return "";
+  }
+
+  const classAttr = className ? ` class="${className}"` : "";
+  return `<p${classAttr}>${escapeHtml(text)}</p>`;
+}
+
 function renderStats(items) {
   return items
     .map(
@@ -317,7 +326,7 @@ function renderBelowFoldSections(course) {
           <div class="section-header">
             <span class="eyebrow">${escapeHtml(course.value.eyebrow)}</span>
             <h2>${escapeHtml(course.value.title)}</h2>
-            <p>${escapeHtml(course.value.description)}</p>
+            ${renderParagraph(course.value.description)}
           </div>
 
           <div class="feature-grid">
@@ -326,7 +335,7 @@ function renderBelowFoldSections(course) {
 
           <div class="impact-strip">
             <strong>${escapeHtml(course.value.impact.title)}</strong>
-            <p>${escapeHtml(course.value.impact.description)}</p>
+            ${renderParagraph(course.value.impact.description)}
           </div>
         </div>
       </section>
@@ -336,7 +345,7 @@ function renderBelowFoldSections(course) {
           <div class="section-header section-header-light">
             <span class="eyebrow">${escapeHtml(course.program.eyebrow)}</span>
             <h2>${escapeHtml(course.program.title)}</h2>
-            <p>${escapeHtml(course.program.description)}</p>
+            ${renderParagraph(course.program.description)}
           </div>
 
           <div class="module-grid">
@@ -350,7 +359,7 @@ function renderBelowFoldSections(course) {
           <div class="section-header">
             <span class="eyebrow">${escapeHtml(course.timeline.eyebrow)}</span>
             <h2>${escapeHtml(course.timeline.title)}</h2>
-            <p>${escapeHtml(course.timeline.description)}</p>
+            ${renderParagraph(course.timeline.description)}
           </div>
 
           <div class="timeline-grid">
@@ -364,7 +373,7 @@ function renderBelowFoldSections(course) {
           <div class="section-header">
             <span class="eyebrow">${escapeHtml(course.audience.eyebrow)}</span>
             <h2>${escapeHtml(course.audience.title)}</h2>
-            <p>${escapeHtml(course.audience.description)}</p>
+            ${renderParagraph(course.audience.description)}
           </div>
 
           <div class="info-grid">
@@ -378,7 +387,7 @@ function renderBelowFoldSections(course) {
           <div class="section-header section-header-light">
             <span class="eyebrow">${escapeHtml(course.faculty.eyebrow)}</span>
             <h2>${escapeHtml(course.faculty.title)}</h2>
-            <p>${escapeHtml(course.faculty.description)}</p>
+            ${renderParagraph(course.faculty.description)}
           </div>
 
           <div class="info-grid info-grid-3">
@@ -410,7 +419,7 @@ function renderBelowFoldSections(course) {
               <div class="section-header coordinator-header">
                 <span class="eyebrow">${escapeHtml(course.coordinator.eyebrow)}</span>
                 <h2>${escapeHtml(course.coordinator.title)}</h2>
-                <p>${escapeHtml(course.coordinator.description)}</p>
+                ${renderParagraph(course.coordinator.description)}
               </div>
 
               <article class="coordinator-card">
@@ -435,7 +444,7 @@ function renderBelowFoldSections(course) {
           <div class="lead-copy">
             <span class="eyebrow">Pr\u00f3xima turma</span>
             <h2>${escapeHtml(course.lead.title)}</h2>
-            <p>${escapeHtml(course.lead.description)}</p>
+            ${renderParagraph(course.lead.description)}
             ${renderList(course.lead.points, "hero-points")}
           </div>
 

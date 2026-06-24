@@ -108,15 +108,13 @@ const course = {
     ],
     impact: {
       title: "Mais do que uma titulação, uma preparação sólida para atuar em ambientes críticos.",
-      description:
-        "A página posiciona o curso como uma escolha para quem busca aprofundamento técnico, vivência prática e mais segurança para cuidar de pacientes em terapia intensiva adulto."
+      description: ""
     }
   },
   program: {
     eyebrow: "Conteúdo programático",
     title: "Conteúdo do curso",
-    description:
-      "Os módulos foram organizados para desenvolver domínio ético, leitura clínica, resposta ao trauma, tecnologias invasivas, segurança assistencial e gestão em UTI.",
+    description: "",
     modules: [
       {
         title: "Fundamentos Éticos, Legais e Humanização do Cuidado",
@@ -259,8 +257,7 @@ const course = {
     name: "Patrícia Silva de Figueiredo",
     highlight:
       "Experiência assistencial, formação sólida e atuação voltada ao desenvolvimento de competências em enfermagem para contextos clínicos de maior complexidade.",
-    description:
-      "A coordenação reforça a credibilidade da formação ao unir experiência prática, trajetória acadêmica e compromisso com a preparação do enfermeiro.",
+    description: "",
     credentials: [
       "Enfermeira graduada pela EERP-USP em Bacharelado e Licenciatura em Enfermagem",
       "Mestranda pela Faculdade de Saúde da Universidade de Brasília (FS/UnB)",
@@ -271,8 +268,7 @@ const course = {
   },
   lead: {
     title: "O próximo passo para atuar com mais segurança na UTI adulto pode começar agora.",
-    description:
-      "A página já está pronta para apresentar o curso, esclarecer dúvidas sobre ingresso e direcionar o interessado para o atendimento comercial.",
+    description: "",
     points: [
       "Tire dúvidas sobre valores, condições e próxima abertura de turma.",
       "Confirme documentação necessária para matrícula, como RG, CPF e comprovante de residência.",

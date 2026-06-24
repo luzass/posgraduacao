@@ -108,15 +108,13 @@ const course = {
     ],
     impact: {
       title: "Mais do que um título, uma formação para atuar com segurança, diferencial técnico e visão de crescimento.",
-      description:
-        "A página posiciona a especialização como uma escolha estratégica para quem quer unir ortodontia clínica, inovação e retorno profissional em um mercado competitivo."
+      description: ""
     }
   },
   program: {
     eyebrow: "Conteúdo programático",
     title: "Conteúdo do curso",
-    description:
-      "Os módulos foram organizados para desenvolver domínio biomecânico, ortodontia clínica, alinhadores, ortopedia, ancoragem e áreas complementares de alto valor de mercado.",
+    description: "",
     modules: [
       {
         title: "Biomecânica, Braquetes e Protocolos Clínicos",
@@ -246,8 +244,7 @@ const course = {
     name: "Marcelo S. Gomes",
     highlight:
       "Coordenação com forte trajetória em ortodontia, ortopedia facial, harmonização orofacial e desenvolvimento de biomateriais e protocolos próprios.",
-    description:
-      "A coordenação reforça a proposta do curso ao unir experiência acadêmica, produção técnica, inovação aplicada e longa atuação em pós-graduação.",
+    description: "",
     credentials: [
       "Pós-doutor em Odontologia",
       "Doutor e mestre em Ortodontia e Ortopedia Facial",
@@ -263,8 +260,7 @@ const course = {
   },
   lead: {
     title: "O próximo passo para atuar com mais técnica, segurança e retorno em Ortodontia começa aqui.",
-    description:
-      "A página já está pronta para apresentar a especialização, esclarecer dúvidas sobre ingresso e levar o interessado para o atendimento comercial.",
+    description: "",
     points: [
       "Entenda valores, cronograma e condições da turma com início em 13/08/2026.",
       "Saiba mais sobre as 4 certificações complementares incluídas na formação.",
